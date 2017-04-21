@@ -162,7 +162,7 @@
     <None Include="Resources\icon_002003_256.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LiplisMasto\MastoNet.csproj">
+    <ProjectReference Include="..\MastoNet\MastoNet.csproj">
       <Project>{9db69ccc-77a3-457f-8da6-5369b41439c9}</Project>
       <Name>MastoNet</Name>
     </ProjectReference>

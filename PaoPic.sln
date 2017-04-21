@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaoPic", "PaoPic\PaoPic.csproj", "{71626A9E-3CEC-47C8-9D17-86D8F66607B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MastoNet", "LiplisMasto\MastoNet.csproj", "{9DB69CCC-77A3-457F-8DA6-5369B41439C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MastoNet", "MastoNet\MastoNet.csproj", "{9DB69CCC-77A3-457F-8DA6-5369B41439C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
