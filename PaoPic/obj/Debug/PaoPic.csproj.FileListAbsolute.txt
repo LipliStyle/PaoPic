@@ -1,0 +1,14 @@
+D:\Prg2017\PaoPic\PaoPic\bin\Debug\PaoPic.exe.config
+D:\Prg2017\PaoPic\PaoPic\bin\Debug\PaoPic.exe
+D:\Prg2017\PaoPic\PaoPic\bin\Debug\PaoPic.pdb
+D:\Prg2017\PaoPic\PaoPic\bin\Debug\LiplisMasto.dll
+D:\Prg2017\PaoPic\PaoPic\bin\Debug\Newtonsoft.Json.dll
+D:\Prg2017\PaoPic\PaoPic\bin\Debug\LiplisMasto.pdb
+D:\Prg2017\PaoPic\PaoPic\bin\Debug\Newtonsoft.Json.xml
+D:\Prg2017\PaoPic\PaoPic\obj\Debug\PaoPic.csprojResolveAssemblyReference.cache
+D:\Prg2017\PaoPic\PaoPic\obj\Debug\PaoPic.Form1.resources
+D:\Prg2017\PaoPic\PaoPic\obj\Debug\PaoPic.FrmMain.resources
+D:\Prg2017\PaoPic\PaoPic\obj\Debug\PaoPic.Properties.Resources.resources
+D:\Prg2017\PaoPic\PaoPic\obj\Debug\PaoPic.csproj.GenerateResource.Cache
+D:\Prg2017\PaoPic\PaoPic\obj\Debug\PaoPic.exe
+D:\Prg2017\PaoPic\PaoPic\obj\Debug\PaoPic.pdb

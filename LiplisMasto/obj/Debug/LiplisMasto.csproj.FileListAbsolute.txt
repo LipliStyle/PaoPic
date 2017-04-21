@@ -1,0 +1,7 @@
+D:\Prg2017\LiplisMainProject\LiplisMasto\bin\Debug\LiplisMasto.dll.config
+D:\Prg2017\LiplisMainProject\LiplisMasto\bin\Debug\LiplisMasto.dll
+D:\Prg2017\LiplisMainProject\LiplisMasto\bin\Debug\LiplisMasto.pdb
+D:\Prg2017\LiplisMainProject\LiplisMasto\bin\Debug\Newtonsoft.Json.dll
+D:\Prg2017\LiplisMainProject\LiplisMasto\bin\Debug\Newtonsoft.Json.xml
+D:\Prg2017\LiplisMainProject\LiplisMasto\obj\Debug\LiplisMasto.dll
+D:\Prg2017\LiplisMainProject\LiplisMasto\obj\Debug\LiplisMasto.pdb

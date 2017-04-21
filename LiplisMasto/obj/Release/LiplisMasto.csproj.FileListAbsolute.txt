@@ -1,0 +1,8 @@
+D:\Prg2017\LiplisMainProject\LiplisMasto\bin\Release\LiplisMasto.dll.config
+D:\Prg2017\LiplisMainProject\LiplisMasto\bin\Release\LiplisMasto.dll
+D:\Prg2017\LiplisMainProject\LiplisMasto\bin\Release\LiplisMasto.pdb
+D:\Prg2017\LiplisMainProject\LiplisMasto\bin\Release\Newtonsoft.Json.dll
+D:\Prg2017\LiplisMainProject\LiplisMasto\bin\Release\Newtonsoft.Json.xml
+D:\Prg2017\LiplisMainProject\LiplisMasto\obj\Release\LiplisMasto.csprojResolveAssemblyReference.cache
+D:\Prg2017\LiplisMainProject\LiplisMasto\obj\Release\LiplisMasto.dll
+D:\Prg2017\LiplisMainProject\LiplisMasto\obj\Release\LiplisMasto.pdb
