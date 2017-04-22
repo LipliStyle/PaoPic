@@ -92,6 +92,9 @@ namespace Mastonet
                     //エラーなら抜ける
                     Console.WriteLine(ex);
 
+                    client.Dispose();
+                    client = null;
+
                     return;
                 }
 
