@@ -967,6 +967,16 @@ namespace PaoPic.Gui
         }
 
         /// <summary>
+        /// ヘルプを開く
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsmiHelpOpen_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://liplis.mine.nu/LiplisWiki/webroot/?PaoPic");
+        }
+
+        /// <summary>
         /// 保存フォルダを開く
         /// </summary>
         /// <param name="sender"></param>
@@ -986,6 +996,7 @@ namespace PaoPic.Gui
         {
             this.Close();
         }
+
 
         #endregion
 

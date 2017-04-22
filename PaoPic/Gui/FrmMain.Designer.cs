@@ -35,7 +35,6 @@ namespace PaoPic.Gui
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEnd = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiVersion = new System.Windows.Forms.ToolStripMenuItem();
             this.grpKeep = new System.Windows.Forms.GroupBox();
             this.grpPicTImeLine = new System.Windows.Forms.GroupBox();
             this.FlpPicup = new System.Windows.Forms.FlowLayoutPanel();
@@ -65,6 +64,9 @@ namespace PaoPic.Gui
             this.ColTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColToot = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiHelpOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiVersion = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.grpKeep.SuspendLayout();
             this.grpPicTImeLine.SuspendLayout();
@@ -93,7 +95,7 @@ namespace PaoPic.Gui
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiFile,
-            this.tsmiVersion});
+            this.tsmiHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
@@ -114,13 +116,6 @@ namespace PaoPic.Gui
             this.tsmiEnd.Size = new System.Drawing.Size(113, 22);
             this.tsmiEnd.Text = "終了(&X)";
             this.tsmiEnd.Click += new System.EventHandler(this.tsmiEnd_Click);
-            // 
-            // tsmiVersion
-            // 
-            this.tsmiVersion.Name = "tsmiVersion";
-            this.tsmiVersion.Size = new System.Drawing.Size(63, 20);
-            this.tsmiVersion.Text = "バージョン";
-            this.tsmiVersion.Click += new System.EventHandler(this.tsmiVersion_Click);
             // 
             // grpKeep
             // 
@@ -451,6 +446,28 @@ namespace PaoPic.Gui
             this.ColToot.DisplayIndex = 2;
             this.ColToot.Text = "Toot";
             // 
+            // tsmiHelp
+            // 
+            this.tsmiHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiHelpOpen,
+            this.tsmiVersion});
+            this.tsmiHelp.Name = "tsmiHelp";
+            this.tsmiHelp.Size = new System.Drawing.Size(48, 20);
+            this.tsmiHelp.Text = "ヘルプ";
+            // 
+            // tsmiHelpOpen
+            // 
+            this.tsmiHelpOpen.Name = "tsmiHelpOpen";
+            this.tsmiHelpOpen.Size = new System.Drawing.Size(152, 22);
+            this.tsmiHelpOpen.Text = "ヘルプを開く";
+            this.tsmiHelpOpen.Click += new System.EventHandler(this.tsmiHelpOpen_Click);
+            // 
+            // tsmiVersion
+            // 
+            this.tsmiVersion.Name = "tsmiVersion";
+            this.tsmiVersion.Size = new System.Drawing.Size(152, 22);
+            this.tsmiVersion.Text = "バージョン";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -512,7 +529,6 @@ namespace PaoPic.Gui
         private System.Windows.Forms.ColumnHeader ColDummy;
         private System.Windows.Forms.Button btnClearSaved;
         private System.Windows.Forms.Button btnClearPicup;
-        private System.Windows.Forms.ToolStripMenuItem tsmiVersion;
         private System.Windows.Forms.Button btnClearTimeLine;
         private System.Windows.Forms.CheckBox chkOnline;
         private System.Windows.Forms.Button btnOpenDIr;
@@ -520,6 +536,9 @@ namespace PaoPic.Gui
         private System.Windows.Forms.ToolStripMenuItem tsmiEnd;
         private System.Windows.Forms.Label lblTitleTerms;
         private System.Windows.Forms.ComboBox cboTerms;
+        private System.Windows.Forms.ToolStripMenuItem tsmiHelp;
+        private System.Windows.Forms.ToolStripMenuItem tsmiHelpOpen;
+        private System.Windows.Forms.ToolStripMenuItem tsmiVersion;
     }
 }
 
