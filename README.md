@@ -7,14 +7,14 @@ https://liplis.mine.nu/PaoPic/PaoPic1.1.2.zip
 ## マニュアル  
 https://liplis.mine.nu/PaoPic/PaoPic1.1.2.zip  
   
-# ライセンス
+## ライセンス
 MITライセンスです。  
   
-# 使用ライブラリ
+## 使用ライブラリ
 Mastonetを使用させて頂いています。  
 https://github.com/glacasa/Mastonet  
   
-# 使い方 
+## 使い方 
 1.最初に、ログイン画面が出てきますので、以下の情報を入力して下さい  
 　メールアドレス  
 　パスワード  
