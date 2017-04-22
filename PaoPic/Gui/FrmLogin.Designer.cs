@@ -74,6 +74,10 @@
             // cboInstances
             // 
             this.cboInstances.FormattingEnabled = true;
+            this.cboInstances.Items.AddRange(new object[] {
+            "https://mstdn.jp",
+            "https://pawoo.net",
+            "https://friends.nico"});
             this.cboInstances.Location = new System.Drawing.Point(87, 76);
             this.cboInstances.Name = "cboInstances";
             this.cboInstances.Size = new System.Drawing.Size(164, 20);

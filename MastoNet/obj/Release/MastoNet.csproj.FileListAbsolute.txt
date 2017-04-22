@@ -5,3 +5,10 @@ D:\Prg2017\PaoPic\LiplisMasto\bin\Release\MastoNet.dll
 D:\Prg2017\PaoPic\LiplisMasto\bin\Release\MastoNet.pdb
 D:\Prg2017\PaoPic\LiplisMasto\obj\Release\MastoNet.dll
 D:\Prg2017\PaoPic\LiplisMasto\obj\Release\MastoNet.pdb
+D:\Prg2017\PaoPic\MastoNet\bin\Release\MastoNet.dll.config
+D:\Prg2017\PaoPic\MastoNet\bin\Release\MastoNet.dll
+D:\Prg2017\PaoPic\MastoNet\bin\Release\MastoNet.pdb
+D:\Prg2017\PaoPic\MastoNet\bin\Release\Newtonsoft.Json.dll
+D:\Prg2017\PaoPic\MastoNet\bin\Release\Newtonsoft.Json.xml
+D:\Prg2017\PaoPic\MastoNet\obj\Release\MastoNet.dll
+D:\Prg2017\PaoPic\MastoNet\obj\Release\MastoNet.pdb

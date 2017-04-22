@@ -89,10 +89,10 @@ namespace Mastonet
                 }
                 catch(Exception ex)
                 {
+                    //エラーなら抜ける
                     Console.WriteLine(ex);
 
-                    //再接続
-                    GetStream();
+                    return;
                 }
 
             }

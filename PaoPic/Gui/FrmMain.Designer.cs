@@ -51,13 +51,15 @@ namespace PaoPic.Gui
             this.btnClearTimeLine = new System.Windows.Forms.Button();
             this.btnClearSaved = new System.Windows.Forms.Button();
             this.btnClearPicup = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTitleAutoSave = new System.Windows.Forms.Label();
             this.cboAutoSave = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitleDisplayNum = new System.Windows.Forms.Label();
             this.cboDisplayNum = new System.Windows.Forms.ComboBox();
-            this.pnlContent = new System.Windows.Forms.Panel();
             this.btnStop = new System.Windows.Forms.PictureBox();
             this.btnStart = new System.Windows.Forms.PictureBox();
+            this.pnlContent = new System.Windows.Forms.Panel();
+            this.lblTitleTerms = new System.Windows.Forms.Label();
+            this.cboTerms = new System.Windows.Forms.ComboBox();
             this.lstTimeline = new PaoPic.Ctrl.BufferedListView();
             this.ColDummy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -73,9 +75,9 @@ namespace PaoPic.Gui
             this.grpTimeline.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlCtrl.SuspendLayout();
-            this.pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnStop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnStart)).BeginInit();
+            this.pnlContent.SuspendLayout();
             this.SuspendLayout();
             // 
             // FlpSaved
@@ -217,15 +219,17 @@ namespace PaoPic.Gui
             // 
             // pnlCtrl
             // 
+            this.pnlCtrl.Controls.Add(this.lblTitleTerms);
+            this.pnlCtrl.Controls.Add(this.cboTerms);
             this.pnlCtrl.Controls.Add(this.btnOpenDIr);
             this.pnlCtrl.Controls.Add(this.txtDir);
             this.pnlCtrl.Controls.Add(this.chkOnline);
             this.pnlCtrl.Controls.Add(this.btnClearTimeLine);
             this.pnlCtrl.Controls.Add(this.btnClearSaved);
             this.pnlCtrl.Controls.Add(this.btnClearPicup);
-            this.pnlCtrl.Controls.Add(this.label2);
+            this.pnlCtrl.Controls.Add(this.lblTitleAutoSave);
             this.pnlCtrl.Controls.Add(this.cboAutoSave);
-            this.pnlCtrl.Controls.Add(this.label1);
+            this.pnlCtrl.Controls.Add(this.lblTitleDisplayNum);
             this.pnlCtrl.Controls.Add(this.cboDisplayNum);
             this.pnlCtrl.Controls.Add(this.btnStop);
             this.pnlCtrl.Controls.Add(this.btnStart);
@@ -239,7 +243,7 @@ namespace PaoPic.Gui
             // 
             this.btnOpenDIr.BackColor = System.Drawing.SystemColors.Control;
             this.btnOpenDIr.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnOpenDIr.Location = new System.Drawing.Point(1157, 9);
+            this.btnOpenDIr.Location = new System.Drawing.Point(1157, 10);
             this.btnOpenDIr.Name = "btnOpenDIr";
             this.btnOpenDIr.Size = new System.Drawing.Size(95, 20);
             this.btnOpenDIr.TabIndex = 11;
@@ -249,7 +253,7 @@ namespace PaoPic.Gui
             // 
             // txtDir
             // 
-            this.txtDir.Location = new System.Drawing.Point(929, 9);
+            this.txtDir.Location = new System.Drawing.Point(929, 11);
             this.txtDir.Name = "txtDir";
             this.txtDir.ReadOnly = true;
             this.txtDir.Size = new System.Drawing.Size(222, 19);
@@ -259,7 +263,7 @@ namespace PaoPic.Gui
             // 
             this.chkOnline.AutoSize = true;
             this.chkOnline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.chkOnline.Location = new System.Drawing.Point(458, 13);
+            this.chkOnline.Location = new System.Drawing.Point(535, 13);
             this.chkOnline.Name = "chkOnline";
             this.chkOnline.Size = new System.Drawing.Size(104, 16);
             this.chkOnline.TabIndex = 9;
@@ -271,7 +275,7 @@ namespace PaoPic.Gui
             // 
             this.btnClearTimeLine.BackColor = System.Drawing.SystemColors.Control;
             this.btnClearTimeLine.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnClearTimeLine.Location = new System.Drawing.Point(611, 9);
+            this.btnClearTimeLine.Location = new System.Drawing.Point(647, 10);
             this.btnClearTimeLine.Name = "btnClearTimeLine";
             this.btnClearTimeLine.Size = new System.Drawing.Size(86, 20);
             this.btnClearTimeLine.TabIndex = 8;
@@ -283,7 +287,7 @@ namespace PaoPic.Gui
             // 
             this.btnClearSaved.BackColor = System.Drawing.SystemColors.Control;
             this.btnClearSaved.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnClearSaved.Location = new System.Drawing.Point(795, 9);
+            this.btnClearSaved.Location = new System.Drawing.Point(831, 10);
             this.btnClearSaved.Name = "btnClearSaved";
             this.btnClearSaved.Size = new System.Drawing.Size(86, 20);
             this.btnClearSaved.TabIndex = 7;
@@ -295,7 +299,7 @@ namespace PaoPic.Gui
             // 
             this.btnClearPicup.BackColor = System.Drawing.SystemColors.Control;
             this.btnClearPicup.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnClearPicup.Location = new System.Drawing.Point(703, 9);
+            this.btnClearPicup.Location = new System.Drawing.Point(739, 10);
             this.btnClearPicup.Name = "btnClearPicup";
             this.btnClearPicup.Size = new System.Drawing.Size(86, 20);
             this.btnClearPicup.TabIndex = 6;
@@ -303,15 +307,15 @@ namespace PaoPic.Gui
             this.btnClearPicup.UseVisualStyleBackColor = false;
             this.btnClearPicup.Click += new System.EventHandler(this.btnClearPicup_Click);
             // 
-            // label2
+            // lblTitleAutoSave
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(252, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "自動保存";
+            this.lblTitleAutoSave.AutoSize = true;
+            this.lblTitleAutoSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lblTitleAutoSave.Location = new System.Drawing.Point(222, 14);
+            this.lblTitleAutoSave.Name = "lblTitleAutoSave";
+            this.lblTitleAutoSave.Size = new System.Drawing.Size(53, 12);
+            this.lblTitleAutoSave.TabIndex = 5;
+            this.lblTitleAutoSave.Text = "自動保存";
             // 
             // cboAutoSave
             // 
@@ -319,22 +323,24 @@ namespace PaoPic.Gui
             this.cboAutoSave.FormattingEnabled = true;
             this.cboAutoSave.Items.AddRange(new object[] {
             "しない",
-            "する"});
-            this.cboAutoSave.Location = new System.Drawing.Point(311, 10);
+            "すべて",
+            "健全のみ",
+            "不健全のみ"});
+            this.cboAutoSave.Location = new System.Drawing.Point(276, 10);
             this.cboAutoSave.Name = "cboAutoSave";
             this.cboAutoSave.Size = new System.Drawing.Size(101, 20);
             this.cboAutoSave.TabIndex = 4;
             this.cboAutoSave.SelectedIndexChanged += new System.EventHandler(this.cboAutoSave_SelectedIndexChanged);
             // 
-            // label1
+            // lblTitleDisplayNum
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(97, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "表示件数";
+            this.lblTitleDisplayNum.AutoSize = true;
+            this.lblTitleDisplayNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lblTitleDisplayNum.Location = new System.Drawing.Point(85, 14);
+            this.lblTitleDisplayNum.Name = "lblTitleDisplayNum";
+            this.lblTitleDisplayNum.Size = new System.Drawing.Size(53, 12);
+            this.lblTitleDisplayNum.TabIndex = 3;
+            this.lblTitleDisplayNum.Text = "表示件数";
             // 
             // cboDisplayNum
             // 
@@ -346,21 +352,11 @@ namespace PaoPic.Gui
             "300",
             "400",
             "500"});
-            this.cboDisplayNum.Location = new System.Drawing.Point(156, 10);
+            this.cboDisplayNum.Location = new System.Drawing.Point(139, 10);
             this.cboDisplayNum.Name = "cboDisplayNum";
             this.cboDisplayNum.Size = new System.Drawing.Size(71, 20);
             this.cboDisplayNum.TabIndex = 2;
             this.cboDisplayNum.SelectedIndexChanged += new System.EventHandler(this.cboDisplayNum_SelectedIndexChanged);
-            // 
-            // pnlContent
-            // 
-            this.pnlContent.Controls.Add(this.spl1);
-            this.pnlContent.Controls.Add(this.grpKeep);
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(0, 64);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1264, 857);
-            this.pnlContent.TabIndex = 6;
             // 
             // btnStop
             // 
@@ -383,6 +379,40 @@ namespace PaoPic.Gui
             this.btnStart.TabIndex = 0;
             this.btnStart.TabStop = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // pnlContent
+            // 
+            this.pnlContent.Controls.Add(this.spl1);
+            this.pnlContent.Controls.Add(this.grpKeep);
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(0, 64);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1264, 857);
+            this.pnlContent.TabIndex = 6;
+            // 
+            // lblTitleTerms
+            // 
+            this.lblTitleTerms.AutoSize = true;
+            this.lblTitleTerms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lblTitleTerms.Location = new System.Drawing.Point(391, 14);
+            this.lblTitleTerms.Name = "lblTitleTerms";
+            this.lblTitleTerms.Size = new System.Drawing.Size(29, 12);
+            this.lblTitleTerms.TabIndex = 13;
+            this.lblTitleTerms.Text = "条件";
+            // 
+            // cboTerms
+            // 
+            this.cboTerms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTerms.FormattingEnabled = true;
+            this.cboTerms.Items.AddRange(new object[] {
+            "すべて",
+            "健全のみ",
+            "不健全のみ"});
+            this.cboTerms.Location = new System.Drawing.Point(421, 10);
+            this.cboTerms.Name = "cboTerms";
+            this.cboTerms.Size = new System.Drawing.Size(101, 20);
+            this.cboTerms.TabIndex = 12;
+            this.cboTerms.SelectedIndexChanged += new System.EventHandler(this.cboTerms_SelectedIndexChanged);
             // 
             // lstTimeline
             // 
@@ -446,9 +476,9 @@ namespace PaoPic.Gui
             this.panel2.PerformLayout();
             this.pnlCtrl.ResumeLayout(false);
             this.pnlCtrl.PerformLayout();
-            this.pnlContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnStop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnStart)).EndInit();
+            this.pnlContent.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,9 +505,9 @@ namespace PaoPic.Gui
         private System.Windows.Forms.ColumnHeader ColTime;
         private System.Windows.Forms.ColumnHeader ColName;
         private System.Windows.Forms.ColumnHeader ColToot;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitleDisplayNum;
         private System.Windows.Forms.ComboBox cboDisplayNum;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTitleAutoSave;
         private System.Windows.Forms.ComboBox cboAutoSave;
         private System.Windows.Forms.ColumnHeader ColDummy;
         private System.Windows.Forms.Button btnClearSaved;
@@ -488,6 +518,8 @@ namespace PaoPic.Gui
         private System.Windows.Forms.Button btnOpenDIr;
         private System.Windows.Forms.TextBox txtDir;
         private System.Windows.Forms.ToolStripMenuItem tsmiEnd;
+        private System.Windows.Forms.Label lblTitleTerms;
+        private System.Windows.Forms.ComboBox cboTerms;
     }
 }
 

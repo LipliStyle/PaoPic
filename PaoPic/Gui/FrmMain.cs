@@ -10,9 +10,12 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 using static System.Windows.Forms.ListViewItem;
 
@@ -38,6 +41,18 @@ namespace PaoPic.Gui
         private SettingAccount settingAccount;
         private SettingGeneral settingGeneral;
 
+        //=====================================
+        // 高精度タイマー
+        private System.Timers.Timer twetterConnectCheckTimer;
+
+
+        ///=============================
+        /// 最終収集時刻
+        protected DateTime lastCollectedTime;
+        private int waitTime = 10;
+
+        //=====================================
+        // 表示件数
         private int maxCount = 10;
 
         //====================================================================
@@ -74,6 +89,9 @@ namespace PaoPic.Gui
 
             //オンラインスタート
             startOnline();
+
+            //タイマー初期化
+            initTimer();
         }
 
         /// <summary>
@@ -93,10 +111,14 @@ namespace PaoPic.Gui
         /// </summary>
         private void initWindow()
         {
+            //タイトルセット
+            this.Text = "PaoPic " + Assembly.GetExecutingAssembly().GetName().Version.ToString() ;
+
             this.btnStop.Image = global::PaoPic.Properties.Resources.icon_001713_256_off;
 
             cboAutoSave.SelectedIndex = settingGeneral.selectedAutoSave;
             cboDisplayNum.SelectedIndex = settingGeneral.selectedDisplayNum;
+            cboTerms.SelectedIndex = settingGeneral.selectTerms;
             chkOnline.Checked = settingGeneral.startOnline;
         }
 
@@ -222,6 +244,21 @@ namespace PaoPic.Gui
             }
         }
 
+        /// <summary>
+        /// タイマーの初期化
+        /// </summary>
+        private void initTimer()
+        {
+            twetterConnectCheckTimer = new System.Timers.Timer();
+            twetterConnectCheckTimer.Interval = 1000;
+            twetterConnectCheckTimer.Elapsed += new ElapsedEventHandler(OnTwetterConnectCheck);
+
+            //最終収集時刻
+            lastCollectedTime = DateTime.Now.AddSeconds(50);
+
+            twetterConnectCheckTimer.Start();
+        }
+
 
         #endregion
         //====================================================================
@@ -254,6 +291,52 @@ namespace PaoPic.Gui
         //====================================================================
         #region ツイート収集処理
 
+        /// <summary>
+        /// コネクション監視
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnTwetterConnectCheck(object sender, ElapsedEventArgs e)
+        {
+            //停止中はスルー
+            if(btnStart.Enabled)
+            {
+                return;
+            }   
+
+            //20秒更新がなければ、再接続する
+            if (DateTime.Now > lastCollectedTime.AddSeconds(20))
+            {
+                //ウェイト分再設定
+                lastCollectedTime = DateTime.Now.AddSeconds(20 + waitTime);
+
+                //再設定
+                addLog("切断されました。" + waitTime +"秒待機します・・・。", "タイムライン収集");
+
+                int breakCount = 0;
+                //waittime秒分待機
+                while (breakCount < waitTime)
+                {
+                    Thread.Sleep(1000);
+                    breakCount++;
+                }
+
+                //再設定
+                addLog("再接続します。", "タイムライン収集");
+
+                //未来を再設定
+                lastCollectedTime = DateTime.Now.AddSeconds(20);
+
+                //最収集開始
+                collectStart();
+
+                //待機時間延伸
+                waitTime = waitTime + 10;
+            }
+        }
+        /// <summary>
+        /// 収集開始
+        /// </summary>
         public async void collectStart()
         {
             try
@@ -287,6 +370,10 @@ namespace PaoPic.Gui
         {
             try
             {
+                //最終収集時刻
+                lastCollectedTime = DateTime.Now;
+                waitTime = 10;
+
                 //画像があったか？
                 bool isMedia = false;
 
@@ -306,18 +393,8 @@ namespace PaoPic.Gui
                             continue;
                         }
 
-                        //ピクチャーセット
-                        Invoke((MethodInvoker)delegate{ 
-                            //イメージのセット
-                            if (this.cboAutoSave.SelectedIndex == 1)
-                            {
-                                setPicup(status, media);
-                            }
-                            else
-                            {
-                                setImage(status, media);
-                            }
-                        });
+                        //ピクチャーピックアップ
+                        picturePicup(status, media);
 
                         //メディアが存在した
                         isMedia = true;
@@ -332,6 +409,89 @@ namespace PaoPic.Gui
                 Console.WriteLine();
             }
         }
+
+        /// <summary>
+        /// ピクチャーのピックアップ
+        /// </summary>
+        /// <param name="status"></param>
+        /// <param name="media"></param>
+        private void picturePicup(Status status , Attachment media)
+        {
+            //ピクチャーセット
+            Invoke((MethodInvoker)delegate {
+                //イメージのセット
+                if (this.cboAutoSave.SelectedIndex == 0)
+                {
+                    picturePicupPicup(status, media);
+                }
+                else
+                {
+                    picturePicupSaved(status, media);
+                }
+
+                Console.WriteLine(status.Content);
+            });
+        }
+        private void picturePicupPicup(Status status, Attachment media)
+        {
+            if (this.cboTerms.SelectedIndex == 1)
+            {
+                //健全のみ受け入れ
+                if (!status.Sensitive.Value)
+                {
+                    setPicup(status, media);
+                }
+            }
+            else if (this.cboTerms.SelectedIndex == 2)
+            {
+                //不健全のみ受け入れ
+                if (status.Sensitive.Value)
+                {
+                    setPicup(status, media);
+                }
+            }
+            else
+            {
+                //すべて受け入れ
+                setPicup(status, media);
+            }
+        }
+
+        private void picturePicupSaved(Status status, Attachment media)
+        {
+            if (this.cboAutoSave.SelectedIndex == 2)
+            {
+                //健全のみ保存
+                if (!status.Sensitive.Value)
+                {
+                    setSaved(status, media);
+                }
+                else
+                {
+                    picturePicupPicup(status, media);
+                }
+                
+            }
+            else if (this.cboAutoSave.SelectedIndex == 3)
+            {
+                //不健全のみ受け入れ
+                if (status.Sensitive.Value)
+                {
+                    setSaved(status, media);
+                }
+                else
+                {
+                    picturePicupPicup(status, media);
+                }
+                
+            }
+            else
+            {
+                setSaved(status, media);
+            }
+        }
+
+
 
         /// <summary>
         /// ツイートのセット
@@ -428,7 +588,7 @@ namespace PaoPic.Gui
         /// イメージを追加する
         /// </summary>
         /// <param name="media"></param>
-        private void setImage(Status status,Attachment media)
+        private void setPicup(Status status,Attachment media)
         {
             Invoke((MethodInvoker)delegate
             {
@@ -487,7 +647,7 @@ namespace PaoPic.Gui
         /// </summary>
         /// <param name="status"></param>
         /// <param name="media"></param>
-        private void setPicup(Status status, Attachment media)
+        private void setSaved(Status status, Attachment media)
         {
             Invoke((MethodInvoker)delegate
             {
@@ -728,6 +888,17 @@ namespace PaoPic.Gui
         }
 
         /// <summary>
+        /// 条件設定
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cboTerms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            settingGeneral.selectTerms = cboTerms.SelectedIndex;
+            SaveSettingGeneral();
+        }
+
+        /// <summary>
         /// tootする
         /// </summary>
         /// <param name="sender"></param>
@@ -815,6 +986,7 @@ namespace PaoPic.Gui
         {
             this.Close();
         }
+
         #endregion
 
 
