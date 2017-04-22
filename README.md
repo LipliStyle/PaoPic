@@ -4,7 +4,7 @@
 最新版バイナリ  
 https://liplis.mine.nu/PaoPic/PaoPic1.1.2.zip  
 
-# マニュアル  
+### マニュアル  
 https://liplis.mine.nu/PaoPic/PaoPic1.1.2.zip  
   
 # ライセンス
