@@ -10,7 +10,7 @@ https://liplis.mine.nu/PaoPic/PaoPic1.1.2.zip
 # ライセンス
 MITライセンスです。  
   
-#　使用ライブラリ
+# 使用ライブラリ
 Mastonetを使用させて頂いています。  
 https://github.com/glacasa/Mastonet  
   
