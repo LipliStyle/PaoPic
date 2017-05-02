@@ -2,19 +2,24 @@
 画像収集に特化したマストドンのクライアントです。ワンクリックで画像の保存、フォロー、ブースト、ファボができます。  
   
 最新版バイナリ  
-https://liplis.mine.nu/PaoPic/PaoPic1.0.0.zip  
+https://liplis.mine.nu/PaoPic/PaoPic1.1.2.zip  
+
+## マニュアル  
+https://liplis.mine.nu/PaoPic/PaoPic1.1.2.zip  
   
+## ライセンス
 MITライセンスです。  
   
+## 使用ライブラリ
 Mastonetを使用させて頂いています。  
 https://github.com/glacasa/Mastonet  
   
-【使い方】  
+## 使い方 
 1.最初に、ログイン画面が出てきますので、以下の情報を入力して下さい  
 　メールアドレス  
 　パスワード  
 　サーバー  
-　
+  
 2.アクセストークン取得ボタンを押します。  
 　メールアドレス、パスワード、サーバー名が間違っているとエラーとなります。  
 　  
