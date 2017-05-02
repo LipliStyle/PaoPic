@@ -157,13 +157,13 @@ namespace PaoPic.Gui
             {
                 //登録情報取得
                 var appRegistration = await MastodonClient.CreateApp(cboInstances.Text, "PaoPic", Scope.Read | Scope.Write | Scope.Follow);
-
+                
                 this.CLIENT_ID = appRegistration.ClientId;
                 this.CLIENTSECRET = appRegistration.ClientSecret;
 
                 return true;
             }
-            catch
+            catch(Exception ex)
             {
                 return false;
             }

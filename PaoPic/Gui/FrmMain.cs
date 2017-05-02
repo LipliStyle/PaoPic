@@ -149,8 +149,7 @@ namespace PaoPic.Gui
                 {
                     ClientId = settingAccount.CLIENT_ID,
                     ClientSecret = settingAccount.CLIENTSECRET,
-                    Instance = settingAccount.INSTANCE_URL,
-                    Scope = Scope.Read|Scope.Write|Scope.Follow
+                    Instance = settingAccount.INSTANCE_URL
                 };
             }
 
